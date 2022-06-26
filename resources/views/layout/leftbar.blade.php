@@ -3,7 +3,7 @@
     <!-- LOGO -->
     <a href="/" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="/assets/images/logobaru.jpeg" alt="" height="105" >
+            <img src="/assets/images/logobaru.jpeg" alt="" style="width: 200px; height: 60px;">
         </span>
     </a>
 
@@ -92,17 +92,20 @@
                 <div class="collapse" id="sidebarEmail">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-email-inbox.html">Data Servis</a>
+                            <a href="/transaksi">Data Transaksi</a>
                         </li>
                         <li>
-                            <a href="apps-email-read.html">Data Pembelian</a>
+                            <a href="/service">Data Servis</a>
+                        </li>
+                        <li>
+                            <a href="/pembelian">Data Pembelian</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
             <li class="side-nav-item">
-                <a href="apps-file-manager.html" class="side-nav-link">
+                <a href="/laporan" class="side-nav-link">
                     <i class="uil-folder-plus"></i>
                     <span> Laporan </span>
                 </a>
