@@ -16,7 +16,7 @@ class DataSparepartController extends Controller
     public function index()
     {
         return view('sparepart.index',[
-            'data_spareparts'=> DataSparepart::all()
+            'data_spareparts'=> DataSparepart::paginate(4)
         ]);
     }
 
