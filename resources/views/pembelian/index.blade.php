@@ -5,8 +5,8 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Data Sparepart</h1>
-        <p class="mb-4">Berikut merupakan data Sparepart dalam servis barang elektronik</p>
+        <h1 class="h3 mb-2 text-gray-800">Data Pembelian</h1>
+        <p class="mb-4">Berikut merupakan data Pembelian dalam servis barang elektronik</p>
 
       @if(Session::has('berhasil'))
           <div class="alert alert-success">
@@ -18,34 +18,29 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-body">
-              <a href="/datasparepart/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Sparepart</a>
+              <a href="/pembelian/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Pembelian</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Id Sparepart</th>
-                    <th>Gambar</th>
-                    <th>Nama</th>
-                    <th>Stok</th>
-                    <th>Harga</th>
+                    <th>Id Pembelian</th>
+                    <th>Nama Sparepart</th>
+                    <th>Jumlah Pembelian</th>
                     <th>Action</th>
 
                   </tr>
                 </thead>
                 <tbody>
                   
-                  @foreach ($data_spareparts as $sparepart)
+                  @foreach ($pembelian as $pembeliannya)
                   <tr>
                     <td>{{$loop -> iteration}}</td>
-                    
-                    <td><img src="{{ asset('storage/'.$sparepart -> image) }}" alt="" height="90px" width="90px" class="rounded" style="object-fit: cover"></td>
-                    <td>{{$sparepart->nama}}</td>
-                    <td>{{$sparepart->stok}}</td>
-                    <td>{{$sparepart->harga}}</td>
+                    <td>{{$pembeliannya->sparepart->nama}}</td>
+                    <td>{{$pembeliannya->jumlah}}</td>
                     <td>
-                      <a class="btn btn-info" href="/datasparepart/{{$sparepart->id}}"><i class="bi bi-eye"></i></a>
-                      <a class="btn btn-primary" href="/datasparepart/{{$sparepart->id}}/edit"><i class="bi bi-pencil-square"></i></a>
-                      <form action="/datasparepart/{{$sparepart->id}}" method="POST">@csrf
+                      <a class="btn btn-info" href="/pembelian/{{$pembeliannya->id}}"><i class="bi bi-eye"></i></a>
+                      <a class="btn btn-primary" href="/pembelian/{{$pembeliannya->id}}/edit"><i class="bi bi-pencil-square"></i></a>
+                      <form action="/pembelian/{{$pembeliannya->id}}" method="POST">@csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
                     </td>
@@ -53,7 +48,7 @@
                   @endforeach
                 </tbody>
               </table>
-              {!!@$data_spareparts->links()!!}
+              {!!@$pembelian->links()!!}
             </div>
           </div>
         </div>
